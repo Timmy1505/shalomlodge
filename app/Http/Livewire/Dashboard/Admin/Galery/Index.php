@@ -10,7 +10,7 @@ use Livewire\WithFileUploads;
 class Index extends Component
 {
     use WithFileUploads;
-    
+
     public $selectedGalery;
     public $new_image;
     public $oldImage;
@@ -57,7 +57,7 @@ class Index extends Component
         $validatedData = $this->validate($rules);
 
         if ($this->new_image) {
-            $validatedData['image'] =  $this->new_image->store('img/galeries');
+            $validatedData['image'] =  $this->new_image->store('img/galeries', 'public');
             unset($validatedData['new_image']);
             Storage::delete($this->selectedGalery->image);
         }

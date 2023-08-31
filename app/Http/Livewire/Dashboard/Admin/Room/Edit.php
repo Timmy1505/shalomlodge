@@ -47,14 +47,14 @@ class Edit extends Component
         $facilities = [];
 
         foreach ($this->facilities->pluck('code') as $facility) {
-            $facilities[$facility] = in_array($facility, $this->roomFacilities) ? $facility : false; 
+            $facilities[$facility] = in_array($facility, $this->roomFacilities) ? $facility : false;
         }
 
         $this->fill(['selectedFacilities' => $facilities]);
     }
 
     public function update()
-    { 
+    {
         $rules = [
             'name' => ['required'],
             'description' => ['required'],
@@ -70,7 +70,7 @@ class Edit extends Component
         $validatedData = $this->validate($rules);
 
         if ($this->image) {
-            $validatedData['image'] = $this->image->store('img/rooms');
+            $validatedData['image'] = $this->image->store('img/rooms', 'public');
             Storage::delete($this->room->image);
         }
 

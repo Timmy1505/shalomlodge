@@ -25,7 +25,7 @@ class Create extends Component
             'title' => ['required'],
         ]);
 
-        $validatedData['image'] =  $this->image->store('img/galeries');
+        $validatedData['image'] =  $this->image->store('img/galeries', 'public');
         $validatedData['code'] = bin2hex(random_bytes(20));
 
         Galery::create($validatedData);

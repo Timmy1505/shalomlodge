@@ -107,7 +107,7 @@ class Index extends Component
         $validatedData['password'] = bcrypt($this->password);
 
         if ($this->avatar) {
-            $validatedData['avatar'] = $this->avatar->store('img/avatar/upload');
+            $validatedData['avatar'] = $this->avatar->store('img/avatar/upload', 'public');
             if (preg_match('/upload/', $this->oldImage)) {
                 Storage::delete($this->oldImage);
             }

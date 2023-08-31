@@ -2,7 +2,8 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{ asset("img/brand/logo-1.png") }}"
+                    class="w-20 h-20 object-cover rounded-tr-xl rounded-bl-xl" alt="shalom">
             </a>
         </x-slot>
 
@@ -11,9 +12,9 @@
         </div>
 
         @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-            </div>
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+        </div>
         @endif
 
         <div class="mt-4 flex items-center justify-between">

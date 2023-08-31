@@ -43,7 +43,7 @@ class Create extends Component
             'image' => ['required', 'image', 'max:2084'],
         ]);
 
-        $validatedData['image'] = $this->image->store('img/rooms');
+        $validatedData['image'] = $this->image->store('img/rooms', 'public');
         $validatedData['code'] = bin2hex(random_bytes(20));
         $validatedData['available'] = $this->total_rooms;
 

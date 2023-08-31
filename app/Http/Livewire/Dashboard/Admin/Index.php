@@ -56,7 +56,7 @@ class Index extends Component
         $validatedData = $this->validate($rules);
 
         if ($this->image) {
-            $validatedData['image'] = $this->image->store('img/about');
+            $validatedData['image'] = $this->image->store('img/about', 'public');
             Storage::delete($this->about->image);
         }
 

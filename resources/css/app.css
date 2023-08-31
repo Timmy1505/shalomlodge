@@ -72,3 +72,115 @@
     }
     /* End Table */
 }
+
+
+
+
+/*-----------------------------------*\
+  #CONTACT
+\*-----------------------------------*/
+
+.contact { background-color: var(--white-2); }
+
+.contact .section-text { margin-block: 5px 35px; }
+
+.contact-form {
+  background-color: var(--white-1);
+  padding: 20px;
+  border-radius: var(--radius-2);
+  margin-block-end: 30px;
+  box-shadow: var(--shadow-1);
+}
+
+.input-field {
+  background-color: var(--white-2);
+  color: var(--eerie-black);
+  font-size: var(--fs-5);
+  padding: 15px;
+  border-radius: var(--radius-2);
+  outline: 1px solid transparent;
+  outline-offset: 0;
+  margin-block-end: 15px;
+}
+
+.input-field::-webkit-inner-spin-button { display: none; }
+
+.input-field:focus { outline-color: var(--red-crayola); }
+
+.input-field::placeholder { transition: var(--transition-1); }
+
+.input-field:focus::placeholder { opacity: 0; }
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 80px;
+  height: 100px;
+  max-height: 200px;
+  overscroll-behavior: contain;
+}
+
+.checkbox {
+  width: max-content;
+  margin-block-start: 5px;
+  accent-color: var(--red-crayola);
+}
+
+.label-link {
+  display: inline-block;
+  color: var(--red-crayola);
+}
+
+.label-link:is(:hover, :focus) { text-decoration: underline; }
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-block-end: 15px;
+}
+
+.checkbox-wrapper .label { font-size: var(--fs-6); }
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 25px;
+}
+
+.contact-item { min-width: 100%; }
+
+.contact-card {
+  background-color: var(--white-1);
+  padding: 20px;
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.contact-card .card-icon {
+  background-color: var(--cultured-2);
+  color: var(--red-crayola);
+  font-size: 25px;
+  padding: 13px;
+  border-radius: 50%;
+  transition: var(--transition-1);
+}
+
+.contact-card:is(:hover, :focus) .card-icon {
+  background-color: var(--red-crayola);
+  color: var(--white-1);
+}
+
+.contact-card .card-title { margin-block-end: 5px; }
+
+.contact-card :is(.card-link, .card-address) {
+  font-size: var(--fs-6);
+  transition: var(--transition-1);
+}
+
+.contact-card .card-link:is(:hover, :focus) { color: var(--red-crayola); }
+
+
